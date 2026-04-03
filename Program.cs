@@ -14,7 +14,7 @@ builder.Services.AddSwaggerGen();
 
 // BD SQLLite
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=C:\\repositorios\\HelpDeskTI\\helpdesk.db"));
+    options.UseSqlite("Data Source=helpdesk.db"));
 
 var app = builder.Build();
 
