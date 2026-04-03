@@ -6,17 +6,9 @@ namespace HelpDeskTI.Models
     {
         public int Id { get; set; }
 
-        [Required]
-        public string Nome { get; set; }
+        public required string Nome { get; set; }
 
-        [Required]
-        public string Email { get; set; }
-
-        [Required]
-        public string Senha { get; set; }
-
-        [Required]
-        public string Perfil { get; set; } // Admin, Tecnico, Usuario
+        public required string Email { get; set; }
 
         public bool Ativo { get; set; } = true;
     }
