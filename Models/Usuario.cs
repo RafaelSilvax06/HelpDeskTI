@@ -10,6 +10,15 @@ namespace HelpDeskTI.Models
 
         public required string Email { get; set; }
 
-        public bool Ativo { get; set; } = true;
+        public required string senha { get; set; }
+
+        public required Perfil perfil { get; set; }
+
+    }
+
+    public enum Perfil
+    {
+        Cliente,
+        Analista
     }
 }
