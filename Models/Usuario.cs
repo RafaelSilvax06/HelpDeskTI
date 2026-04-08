@@ -10,9 +10,9 @@ namespace HelpDeskTI.Models
 
         public required string Email { get; set; }
 
-        public required string senha { get; set; }
+        public required string Senha { get; set; }
 
-        public required Perfil perfil { get; set; }
+        public required Perfil Perfil { get; set; }
 
     }
 
