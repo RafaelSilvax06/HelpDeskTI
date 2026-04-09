@@ -6,29 +6,29 @@ namespace HelpDeskTI.Models
     {
         public long Id { get; set; }
 
-        public string titulo { get; set; }
+        public required string Titulo { get; set; }
 
-        public string descricao { get; set; }
+        public required string Descricao { get; set; }
 
-        public StatusChamado status { get; set; }
+        public StatusChamado Status { get; set; }
 
-        public Prioridade prioridade { get; set; }
+        public Prioridade Prioridade { get; set; }
 
-        public Setor setor { get; set; }
+        public Setor Setor { get; set; }
 
-        public Usuario solicitante { get; set; }
+        public required Usuario Solicitante { get; set; }
 
-        public Usuario analista { get; set; }
+        public required Usuario Analista { get; set; }
 
-        public Categoria categoria { get; set; }
+        public required Categoria Categoria { get; set; }
 
-        public string comentarios { get; set; }
+        public required string Comentarios { get; set; }
 
-        public DateTime dataAbertura { get; set; }
+        public  DateTime DataAbertura { get; set; }
 
-        public DateTime dataAtualizacao { get; set; }
+        public DateTime DataAtualizacao { get; set; }
 
-        public DateTime dataFechamento { get; set; }
+        public DateTime DataFechamento { get; set; }
 
     }
 
