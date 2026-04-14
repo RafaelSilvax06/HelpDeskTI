@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using HelpDeskTI.Data;
+using HelpDeskTI.Services;
+using HelpDeskTI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,9 +10,14 @@ builder.Services.AddControllersWithViews();
 
 // Add o Swagger
 builder.Services.AddEndpointsApiExplorer();
-
 builder.Services.AddSwaggerGen();
 
+
+// REGISTRO DAS DEPENDÊNCIAS
+builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<UsuarioRepositories>();
+
+builder.Services.AddControllers();
 
 // BD SQLLite
 builder.Services.AddDbContext<AppDbContext>(options =>
@@ -22,10 +29,21 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
 
-    if (db.Database.GetPendingMigrations().Any())
+    if (app.Environment.IsDevelopment()) // 👈 MUITO IMPORTANTE
     {
-        db.Database.EnsureDeleted(); //  apaga tudo
-        db.Database.Migrate();       //  recria com a nova estrutura
+        var hasPendingMigrations = db.Database.GetPendingMigrations().Any();
+
+        if (hasPendingMigrations)
+        {
+            Console.WriteLine("⚠️ DEV: Mudanças detectadas. Recriando banco...");
+
+            db.Database.EnsureDeleted(); // apaga tudo
+            db.Database.Migrate();       // recria com migrations
+        }
+        else
+        {
+            Console.WriteLine("✅ Banco já atualizado.");
+        }
     }
 }
 

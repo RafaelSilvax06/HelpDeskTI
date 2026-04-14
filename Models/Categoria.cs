@@ -1,9 +1,10 @@
-﻿namespace HelpDeskTI.Models
+﻿using System.ComponentModel.DataAnnotations;
+namespace HelpDeskTI.Models
 {
     public class Categoria
     {
-        private string nome { get; set; }
-        private long id { get; set; }
+        public long Id { get; set; }
+        public required string Nome { get; set; }
     }
 
 }

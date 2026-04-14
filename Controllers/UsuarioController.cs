@@ -1,29 +1,39 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HelpDeskTI.Models;
+using HelpDeskTI.Services;
 using HelpDeskTI.Data;
+using HelpDeskTI.DTO;
 
 namespace HelpDeskTI.Controllers 
 { 
 
 	[ApiController]
-	[Route("api/[Controller]")]
+	[Route("api/usuarios")]
 	public class UsuarioController : ControllerBase
     {
 
-		private readonly AppDbContext _context;
+		private readonly UsuarioService _usuarioService;
 
-		public UsuarioController(AppDbContext context)
+        public UsuarioController(UsuarioService services)
 		{
-			_context = context;
+            _usuarioService = services;
+		}
+
+
+		[HttpPost]
+		[Route("cadastro")]
+		public ActionResult CriarUsuario([FromBody] Usuario usuario)
+		{
+			_usuarioService.CriarUsuario(usuario);
+			return Created("",usuario);
 		}
 
 		[HttpPost]
-		public IActionResult CriarUsuario([FromBody] Usuario usuario)
+		[Route("login")]
+		public ActionResult Login([FromBody] LoginRequestDTO request)
 		{
-			_context.Usuarios.Add(usuario);
-			_context.SaveChanges();
-
-			return Ok(usuario);
-		}
-	}
+            var usuario = _usuarioService.Login(request.Email, request.Senha);
+            return Ok(usuario);
+        }
+    }
 }

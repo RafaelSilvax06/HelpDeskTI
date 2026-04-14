@@ -10,5 +10,9 @@ namespace HelpDeskTI.Data
 		}
 
 		public DbSet<Usuario> Usuarios { get; set; }
-	}
+
+		public DbSet<Categoria> Categorias { get; set; }
+
+		public DbSet<Chamado> Chamados { get; set; }
+    }
 }

@@ -8,8 +8,19 @@ namespace HelpDeskTI.Models
 
         public required string Nome { get; set; }
 
+        public required string CPF { get; set; }
+
         public required string Email { get; set; }
 
-        public bool Ativo { get; set; } = true;
+        public required string Senha { get; set; }
+
+        public required Perfil Perfil { get; set; }
+
+    }
+
+    public enum Perfil
+    {
+        Cliente,
+        Analista
     }
 }
