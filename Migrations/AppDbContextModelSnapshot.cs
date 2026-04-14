@@ -23,7 +23,7 @@ namespace HelpDeskTI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("Nome")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -38,52 +38,52 @@ namespace HelpDeskTI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("analistaId")
+                    b.Property<int>("AnalistaId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("categoriaId")
+                    b.Property<long>("CategoriaId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("comentarios")
+                    b.Property<string>("Comentarios")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("dataAbertura")
+                    b.Property<DateTime>("DataAbertura")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("dataAtualizacao")
+                    b.Property<DateTime>("DataAtualizacao")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("dataFechamento")
+                    b.Property<DateTime>("DataFechamento")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("descricao")
+                    b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("prioridade")
+                    b.Property<int>("Prioridade")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("setor")
+                    b.Property<int>("Setor")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("solicitanteId")
+                    b.Property<int>("SolicitanteId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("status")
+                    b.Property<int>("Status")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("titulo")
+                    b.Property<string>("Titulo")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("analistaId");
+                    b.HasIndex("AnalistaId");
 
-                    b.HasIndex("categoriaId");
+                    b.HasIndex("CategoriaId");
 
-                    b.HasIndex("solicitanteId");
+                    b.HasIndex("SolicitanteId");
 
                     b.ToTable("Chamados");
                 });
@@ -94,18 +94,22 @@ namespace HelpDeskTI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("email")
+                    b.Property<string>("CPF")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("perfil")
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Perfil")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("senha")
+                    b.Property<string>("Senha")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
@@ -116,29 +120,29 @@ namespace HelpDeskTI.Migrations
 
             modelBuilder.Entity("HelpDeskTI.Models.Chamado", b =>
                 {
-                    b.HasOne("HelpDeskTI.Models.Usuario", "analista")
+                    b.HasOne("HelpDeskTI.Models.Usuario", "Analista")
                         .WithMany()
-                        .HasForeignKey("analistaId")
+                        .HasForeignKey("AnalistaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HelpDeskTI.Models.Categoria", "categoria")
+                    b.HasOne("HelpDeskTI.Models.Categoria", "Categoria")
                         .WithMany()
-                        .HasForeignKey("categoriaId")
+                        .HasForeignKey("CategoriaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("HelpDeskTI.Models.Usuario", "solicitante")
+                    b.HasOne("HelpDeskTI.Models.Usuario", "Solicitante")
                         .WithMany()
-                        .HasForeignKey("solicitanteId")
+                        .HasForeignKey("SolicitanteId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("analista");
+                    b.Navigation("Analista");
 
-                    b.Navigation("categoria");
+                    b.Navigation("Categoria");
 
-                    b.Navigation("solicitante");
+                    b.Navigation("Solicitante");
                 });
 #pragma warning restore 612, 618
         }

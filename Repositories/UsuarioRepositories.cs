@@ -19,6 +19,12 @@ namespace HelpDeskTI.Repositories
         public void SalvarUsuario(Usuario usuario)
         {
             var usuarioExistente = _context.Usuarios.FirstOrDefault(u => u.Email == usuario.Email);
+            var cpfExistente = _context.Usuarios.FirstOrDefault(u => u.CPF == usuario.CPF);
+            
+             if (cpfExistente != null)
+            {
+                throw new Exception("Já existe um usuário com este CPF.");
+            }
             if (usuarioExistente != null)
             {
                 throw new Exception("Já existe um usuário com este email.");
@@ -39,5 +45,6 @@ namespace HelpDeskTI.Repositories
             }
             return usuario;
         }
+
     }
 }
