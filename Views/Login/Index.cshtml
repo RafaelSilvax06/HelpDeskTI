@@ -32,13 +32,33 @@
 <script>
     const form = document.getElementById("login-form");
 
-    form.addEventListener("submit", function (event) {
+    form.addEventListener("submit", async function (event) {
         event.preventDefault();
 
         const email = document.getElementById("email").value;
         const senha = document.getElementById("senha").value;
 
-        console.log("Email:", email);
-        console.log("Senha:", senha);
+        const dados = {
+            email: email,
+            senha: senha
+        };
+
+        try {
+            const response = await fetch("/api/usuarios/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(dados)
+            });
+
+            const resultado = await response.json();
+
+            console.log("Resposta da API:", resultado);
+            console.log("Status HTTP:", response.status);
+
+        } catch (error) {
+            console.error("Erro ao chamar a API:", error);
+        }
     });
 </script>
