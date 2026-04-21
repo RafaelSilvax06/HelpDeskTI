@@ -14,19 +14,17 @@ namespace HelpDeskTI.Models
 
         public Prioridade Prioridade { get; set; }
 
-        public Setor Setor { get; set; }
+        public Usuario? Solicitante { get; set; }
 
-        public required Usuario Solicitante { get; set; }
+        public Usuario? Analista { get; set; }
 
-        public required Usuario Analista { get; set; }
+        public required Setor Categoria { get; set; }
 
-        public required Categoria Categoria { get; set; }
+        public string? Comentarios { get; set; }
 
-        public required string Comentarios { get; set; }
+        public DateTime DataAbertura { get; set; }
 
-        public  DateTime DataAbertura { get; set; }
-
-        public DateTime DataAtualizacao { get; set; }
+        public DateTime DataAtualizacao { get; set; }      
 
         public DateTime DataFechamento { get; set; }
 

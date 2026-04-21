@@ -17,6 +17,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<UsuarioRepositories>();
 
+builder.Services.AddScoped<ChamadoService>();      
+builder.Services.AddScoped<ChamadoRepositories>(); 
+
 builder.Services.AddControllers();
 
 // BD SQLLite

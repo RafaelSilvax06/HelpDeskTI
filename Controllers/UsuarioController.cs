@@ -32,8 +32,9 @@ namespace HelpDeskTI.Controllers
 		[Route("login")]
 		public ActionResult Login([FromBody] LoginRequestDTO request)
 		{
-            var usuario = _usuarioService.Login(request.Email, request.Senha);
-            return Ok(usuario);
-        }
+			var usuario = _usuarioService.Login(request.Email, request.Senha);
+			HelpDeskTI.Sessao.SessaoUsuario.UsuarioLogado = usuario;
+			return Ok(usuario);
+		}
     }
 }

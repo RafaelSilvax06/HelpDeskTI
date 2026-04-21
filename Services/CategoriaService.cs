@@ -6,5 +6,6 @@ namespace HelpDeskTI.Services
 {
     public class CategoriaService
     {
+
     }
 }

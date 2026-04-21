@@ -38,10 +38,10 @@ namespace HelpDeskTI.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("AnalistaId")
+                    b.Property<int?>("AnalistaId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<long>("CategoriaId")
+                    b.Property<int>("Categoria")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Comentarios")
@@ -64,10 +64,7 @@ namespace HelpDeskTI.Migrations
                     b.Property<int>("Prioridade")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("Setor")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int>("SolicitanteId")
+                    b.Property<int?>("SolicitanteId")
                         .HasColumnType("INTEGER");
 
                     b.Property<int>("Status")
@@ -80,8 +77,6 @@ namespace HelpDeskTI.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("AnalistaId");
-
-                    b.HasIndex("CategoriaId");
 
                     b.HasIndex("SolicitanteId");
 
@@ -122,25 +117,13 @@ namespace HelpDeskTI.Migrations
                 {
                     b.HasOne("HelpDeskTI.Models.Usuario", "Analista")
                         .WithMany()
-                        .HasForeignKey("AnalistaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("HelpDeskTI.Models.Categoria", "Categoria")
-                        .WithMany()
-                        .HasForeignKey("CategoriaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("AnalistaId");
 
                     b.HasOne("HelpDeskTI.Models.Usuario", "Solicitante")
                         .WithMany()
-                        .HasForeignKey("SolicitanteId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("SolicitanteId");
 
                     b.Navigation("Analista");
-
-                    b.Navigation("Categoria");
 
                     b.Navigation("Solicitante");
                 });
