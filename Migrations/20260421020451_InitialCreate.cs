@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace HelpDeskTI.Migrations
 {
     /// <inheritdoc />
-    public partial class adicionandoMaisCampos : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -51,10 +51,9 @@ namespace HelpDeskTI.Migrations
                     Descricao = table.Column<string>(type: "TEXT", nullable: false),
                     Status = table.Column<int>(type: "INTEGER", nullable: false),
                     Prioridade = table.Column<int>(type: "INTEGER", nullable: false),
-                    Setor = table.Column<int>(type: "INTEGER", nullable: false),
-                    SolicitanteId = table.Column<int>(type: "INTEGER", nullable: false),
-                    AnalistaId = table.Column<int>(type: "INTEGER", nullable: false),
-                    CategoriaId = table.Column<long>(type: "INTEGER", nullable: false),
+                    SolicitanteId = table.Column<int>(type: "INTEGER", nullable: true),
+                    AnalistaId = table.Column<int>(type: "INTEGER", nullable: true),
+                    Categoria = table.Column<int>(type: "INTEGER", nullable: false),
                     Comentarios = table.Column<string>(type: "TEXT", nullable: false),
                     DataAbertura = table.Column<DateTime>(type: "TEXT", nullable: false),
                     DataAtualizacao = table.Column<DateTime>(type: "TEXT", nullable: false),
@@ -64,34 +63,21 @@ namespace HelpDeskTI.Migrations
                 {
                     table.PrimaryKey("PK_Chamados", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Chamados_Categorias_CategoriaId",
-                        column: x => x.CategoriaId,
-                        principalTable: "Categorias",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
                         name: "FK_Chamados_Usuarios_AnalistaId",
                         column: x => x.AnalistaId,
                         principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Chamados_Usuarios_SolicitanteId",
                         column: x => x.SolicitanteId,
                         principalTable: "Usuarios",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Chamados_AnalistaId",
                 table: "Chamados",
                 column: "AnalistaId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Chamados_CategoriaId",
-                table: "Chamados",
-                column: "CategoriaId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Chamados_SolicitanteId",
@@ -103,10 +89,10 @@ namespace HelpDeskTI.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Chamados");
+                name: "Categorias");
 
             migrationBuilder.DropTable(
-                name: "Categorias");
+                name: "Chamados");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");
