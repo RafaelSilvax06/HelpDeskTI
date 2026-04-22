@@ -1,33 +1,76 @@
-﻿﻿@{
-Layout = null;
-ViewData["Title"] = "Login";
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Login";
 }
 
-<header>
-    <h1>HelpDesk Pro System</h1>
-</header>
-<main>
-    <section>
-        <!-- login -->
-        <h2>~Faça seu Login!</h2>
-        <form id="login-form">
-            <label>Email</label>
-            <input type="email" id="email" name="email" placeholder="Digite seu email" required>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HelpDesk Pro System</title>
+    <link rel="stylesheet" href="~/css/login.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="login-header">
+        <div class="container">
+            <div class="header-title">
+                <h1>HelpDesk Pro System</h1>
+            </div>
+        </div>
+    </header>
 
-            <label>Senha</label>
-            <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+    <main class="login-main">
+        <section class="section-login-page">
+            <div class="container-wrapper">
+                <div class="section-login-title">
+                    <h2>Faça o seu Login!</h2>
+                </div>
 
-            <button type="submit">Entrar</button>
-            <p id="login-message"></p>
-        </form>
-    </section>
+                <form id="login-form">
+                    <div class="login-form-inputs">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
 
-    <section>
-        <!-- Bem Vindo -->
-        <h2>Seja bem-vindo!</h2>
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
 
-        <p>Gerencie chamados de forma simples e eficiente</p>
-    </section>
-</main>
+                    <div class="login-form-button-forgot">
+                        <a href="#">Esqueceu a senha?</a>
+                    </div>
 
-<script src="~/js/login.js"></script>
+                    <div class="login-form-button">
+                        <button type="submit">Entrar</button>
+                    </div>
+
+                    <p id="login-message"></p>
+
+                    <div class="login-form-button-create-account">
+                        <a href="#">Deseja criar a sua conta?</a>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <section class="section-welcome-page">
+            <div class="section-welcome-title">
+                <h2>Seja bem-vindo!</h2>
+            </div>
+
+            <div class="section-welcome-image">
+                <img src="~/img/logo_site.png" alt="Logo HelpDesk">
+            </div>
+
+            <div class="section-welcome-description">
+                <p>Gerencie chamados de forma simples e eficiente</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="~/js/login.js"></script>
+</body>
+</html>

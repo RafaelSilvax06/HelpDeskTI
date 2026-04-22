@@ -1,7 +1,10 @@
 ﻿const form = document.getElementById("login-form");
+const msgLogin = document.getElementById("login-message");
 
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
+
+    msgLogin.textContent = "";
 
     const email = document.getElementById("email").value;
     const senha = document.getElementById("senha").value;
@@ -10,8 +13,6 @@ form.addEventListener("submit", async function (event) {
         email: email,
         senha: senha
     };
-
-    const msgLogin = document.getElementById("login-message");
 
     try {
         const response = await fetch("/api/usuarios/login", {
@@ -24,10 +25,10 @@ form.addEventListener("submit", async function (event) {
 
         const resultado = await response.json();
 
-        console.log("Resposta da API:", resultado);
-        console.log("Status HTTP:", response.status);
-
         if (response.ok) {
+            msgLogin.textContent = "Login realizado com sucesso!";
+            msgLogin.style.color = "green";
+
             if (resultado.perfil === 1) {
                 window.location.href = "/Dashboard/Analista";
             } else {
@@ -37,8 +38,9 @@ form.addEventListener("submit", async function (event) {
             msgLogin.textContent = "Erro ao realizar login. Verifique suas credenciais.";
             msgLogin.style.color = "red";
         }
-
     } catch (error) {
         console.error("Erro ao chamar a API:", error);
+        msgLogin.textContent = "Erro ao conectar com o servidor.";
+        msgLogin.style.color = "red";
     }
 });
