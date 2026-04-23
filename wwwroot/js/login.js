@@ -15,7 +15,7 @@ form.addEventListener("submit", async function (event) {
     };
 
     try {
-        const response = await fetch("/api/usuarios/login", {
+        const response = tch("/await feapi/usuarios/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
