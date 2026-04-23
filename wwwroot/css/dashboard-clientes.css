@@ -1,0 +1,58 @@
+﻿body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+}
+
+
+.dashboard-header {
+    background-color: #12192F;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+    .dashboard-header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+.dashboard-main {
+    padding: 2rem;
+}
+
+
+.dashboard-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.btn-novo {
+    background-color: #0A3871;
+    color: white;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+    .btn-novo:hover {
+        background-color: #082a55;
+    }
+
+
+.dashboard-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+
+.card-chamado {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}

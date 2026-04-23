@@ -3,15 +3,38 @@ Layout = null;
 ViewData["Title"] = "Cliente";
 }
 
-<h1>Cliente</h1>
-
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
-    
+    <meta charset="utf-8" />
+    <title>Dashboard Cliente</title>
+    <link rel="stylesheet" href="~/css/dashboard-cliente.css" />
 </head>
+<body>
 
-<main>
-    <section>
-        <button 
-    </section>
+    <header class="dashboard-header">
+        <div class="container">
+            <h1>HelpDesk Pro</h1>
+            <span>Cliente</span>
+        </div>
+    </header>
 
-</main>
+    <main class="dashboard-main">
+
+        <section class="dashboard-top">
+            <h2>Meus Chamados</h2>
+            <button class="btn-novo">Novo Chamado</button>
+        </section>
+
+        <section class="dashboard-lista">
+            <!-- futuramente lista de chamados -->
+            <div class="card-chamado">
+                <h3>Chamado exemplo</h3>
+                <p>Status: Aberto</p>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
