@@ -15,6 +15,8 @@ formNovoChamado.addEventListener("submit", async function (event) {
         prioridade: prioridade
     };
 
+    console.log("Enviando chamado:", chamado);
+
     try {
         const response = await fetch("/api/chamado/novoChamado", {
             method: "POST",
@@ -24,17 +26,18 @@ formNovoChamado.addEventListener("submit", async function (event) {
             body: JSON.stringify(chamado)
         });
 
+        console.log("Status HTTP:", response.status);
+
         if (response.ok) {
             alert("Chamado criado com sucesso!");
             window.location.href = "/Dashboard/Cliente";
         } else {
             const erro = await response.text();
-            console.error("Erro:", erro);
+            console.error("Erro da API:", erro);
             alert("Erro ao criar chamado.");
         }
-
     } catch (error) {
-        console.error("Erro ao conectar:", error);
+        console.error("Erro ao conectar com a API:", error);
         alert("Erro ao conectar com o servidor.");
     }
 });

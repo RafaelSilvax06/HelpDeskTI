@@ -1,17 +1,51 @@
 ﻿﻿@{
-Layout = null;
+
 ViewData["Title"] = "Cliente";
 }
 
-<h1>Cliente</h1>
+@model List<HelpDeskTI.Models.Chamado>
 
-<head>
-    
-</head>
+<header class="dashboard-header">
+    <div class="dashboard-logo">HelpDesk Pro System</div>
+    <div class="dashboard-user">Cliente</div>
+    <link rel="stylesheet" href="/css/dashboard-clientes.css" />
+</header>
 
-<main>
-    <section>
-        <button 
+<main class="dashboard-container">
+    <section class="dashboard-title-area">
+        <h1>Acompanhar os meus chamados</h1>
+        <button class="btn-novo-chamado" onclick="window.location.href='/Chamados/Novo'">
+            + Novo Chamado
+        </button>
     </section>
 
+
+    <section class="dashboard-filters">
+        <button>Todos os status</button>
+    </section>
+
+
+    <section class="chamados-list">
+
+        @foreach (var chamado in Model)
+        {
+            <article class="chamado-card">
+                <div>
+                    <h2>@chamado.Titulo</h2>
+                    <p>@chamado.Descricao</p>
+                </div>
+
+                <div class="chamado-tags">
+                    <span class="status">@chamado.Status</span>
+                    <span class="prioridade">@chamado.Prioridade</span>
+                </div>
+
+                <div class="chamado-info">
+                    <span>@chamado.Solicitante?.Nome</span>
+                    <span>@chamado.DataAbertura.ToString("dd/MM/yyyy")</span>
+                    <span>@chamado.Categoria</span>
+                </div>
+            </article>
+        }
+    </section>
 </main>
