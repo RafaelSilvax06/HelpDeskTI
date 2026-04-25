@@ -1,40 +1,51 @@
 ﻿﻿@{
-Layout = null;
+
 ViewData["Title"] = "Cliente";
 }
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="utf-8" />
-    <title>Dashboard Cliente</title>
-    <link rel="stylesheet" href="~/css/dashboard-cliente.css" />
-</head>
-<body>
+@model List<HelpDeskTI.Models.Chamado>
 
-    <header class="dashboard-header">
-        <div class="container">
-            <h1>HelpDesk Pro</h1>
-            <span>Cliente</span>
-        </div>
-    </header>
+<header class="dashboard-header">
+    <div class="dashboard-logo">HelpDesk Pro System</div>
+    <div class="dashboard-user">Cliente</div>
+    <link rel="stylesheet" href="/css/dashboard-clientes.css" />
+</header>
 
-    <main class="dashboard-main">
+<main class="dashboard-container">
+    <section class="dashboard-title-area">
+        <h1>Acompanhar os meus chamados</h1>
+        <button class="btn-novo-chamado" onclick="window.location.href='/Chamados/Novo'">
+            + Novo Chamado
+        </button>
+    </section>
 
-        <section class="dashboard-top">
-            <h2>Meus Chamados</h2>
-            <button class="btn-novo">Novo Chamado</button>
-        </section>
 
-        <section class="dashboard-lista">
-            <!-- futuramente lista de chamados -->
-            <div class="card-chamado">
-                <h3>Chamado exemplo</h3>
-                <p>Status: Aberto</p>
-            </div>
-        </section>
+    <section class="dashboard-filters">
+        <button>Todos os status</button>
+    </section>
 
-    </main>
 
-</body>
-</html>
+    <section class="chamados-list">
+
+        @foreach (var chamado in Model)
+        {
+            <article class="chamado-card">
+                <div>
+                    <h2>@chamado.Titulo</h2>
+                    <p>@chamado.Descricao</p>
+                </div>
+
+                <div class="chamado-tags">
+                    <span class="status">@chamado.Status</span>
+                    <span class="prioridade">@chamado.Prioridade</span>
+                </div>
+
+                <div class="chamado-info">
+                    <span>@chamado.Solicitante?.Nome</span>
+                    <span>@chamado.DataAbertura.ToString("dd/MM/yyyy")</span>
+                    <span>@chamado.Categoria</span>
+                </div>
+            </article>
+        }
+    </section>
+</main>

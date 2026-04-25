@@ -17,19 +17,14 @@ namespace HelpDeskTI.Repositories
 
         public void SalvarChamado(Chamado chamado)
         {
-
-            if (chamado.Categoria == null)
+            if (chamado.Titulo == null)
             {
-                throw new Exception("Categoria não pode ser null.");
-
+                throw new Exception("Título não pode ser nulo.");
             }
-            else if (chamado.Titulo == null)
+
+            if (chamado.Descricao == null)
             {
-                throw new Exception("Já existe um chamado com este título.");
-            }
-            else if (chamado.Descricao == null)
-            {
-                throw new Exception("Já existe um chamado com esta descrição.");
+                throw new Exception("Descrição não pode ser nula.");
             }
 
             if (chamado.Solicitante != null)

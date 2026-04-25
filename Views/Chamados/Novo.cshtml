@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Novo Chamado";
+}
+
+<h1>Abrir novo chamado</h1>
+
+<form id="novo-chamado-form">
+    <label for="titulo">Título</label>
+    <input type="text" id="titulo" name="titulo" required />
+
+    <label for="descricao">Descrição</label>
+    <textarea id="descricao" name="descricao" required></textarea>
+
+    <label for="categoria">Categoria</label>
+    <select id="categoria">
+        <option value="0">Suporte</option>
+        <option value="1">Desenvolvimento</option>
+        <option value="2">Infraestrutura</option>
+        <option value="3">Redes</option>
+        <option value="4">Bug</option>
+    </select>
+
+    <label for="prioridade">Prioridade</label>
+    <select id="prioridade">
+        <option value="0">Baixa</option>
+        <option value="1">Média</option>
+        <option value="2">Alta</option>
+    </select>
+
+    <button type="submit">Cadastrar</button>
+
+    <p id="novo-chamado-message"></p>
+</form>
+
+<script src="~/js/novo-chamado.js"></script>
