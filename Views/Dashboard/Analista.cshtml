@@ -1,7 +1,47 @@
-﻿﻿@{
-Layout = null;
-ViewData["Title"] = "Analista";
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Analista";
 }
 
+@model List<HelpDeskTI.Models.Chamado>
 
-<h1>Analista</h1>
+<link rel="stylesheet" href="/css/dashboard-analista.css" />
+
+<header class="dashboard-header">
+    <div class="dashboard-logo">HelpDesk Pro System</div>
+    <div class="dashboard-user">Analista</div>
+</header>
+
+<main class="dashboard-container">
+    <section class="dashboard-title-area">
+        <h1>Chamados</h1>
+    </section>
+
+    <section class="dashboard-filters">
+        <button>Todos os status</button>
+        <button>Meus atendimentos</button>
+    </section>
+
+    <section class="chamados-list">
+        @foreach (var chamado in Model)
+        {
+            <article class="chamado-card">
+                <div>
+                    <h2>@chamado.Titulo</h2>
+                    <p>@chamado.Descricao</p>
+                </div>
+
+                <div class="chamado-tags">
+                    <span class="status">@chamado.Status</span>
+                    <span class="prioridade">@chamado.Prioridade</span>
+                </div>
+
+                <div class="chamado-info">
+                    <span>@(chamado.Solicitante?.Nome ?? "Sem solicitante")</span>
+                    <span>@chamado.DataAbertura.ToString("dd/MM/yyyy")</span>
+                    <span>@chamado.Categoria</span>
+                </div>
+            </article>
+        }
+    </section>
+</main>

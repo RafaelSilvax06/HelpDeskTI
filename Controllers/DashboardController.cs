@@ -13,7 +13,8 @@ public class DashboardController : Controller
     }
     public IActionResult Analista()
     {
-        return View();
+        var chamados = _context.Chamados.ToList();
+        return View(chamados);
     }
 
     public IActionResult Cliente()

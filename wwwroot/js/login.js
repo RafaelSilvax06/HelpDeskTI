@@ -1,40 +1,44 @@
-﻿const formNovoChamado = document.getElementById("novo-chamado-form");
+﻿const form = document.getElementById("login-form");
 
-formNovoChamado.addEventListener("submit", async function (event) {
+form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    const titulo = document.getElementById("titulo").value;
-    const descricao = document.getElementById("descricao").value;
-    const categoria = Number(document.getElementById("categoria").value);
-    const prioridade = Number(document.getElementById("prioridade").value);
+    const email = document.getElementById("email").value;
+    const senha = document.getElementById("senha").value;
 
-    const chamado = {
-        titulo: titulo,
-        descricao: descricao,
-        categoria: categoria,
-        prioridade: prioridade
+    const dados = {
+        email: email,
+        senha: senha
     };
 
+    const msgLogin = document.getElementById("login-message");
+
     try {
-        const response = await fetch("/api/chamado/novoChamado", {
+        const response = await fetch("/api/usuarios/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(chamado)
+            body: JSON.stringify(dados)
         });
 
+        const resultado = await response.json();
+
+        console.log("Resposta da API:", resultado);
+        console.log("Status HTTP:", response.status);
+
         if (response.ok) {
-            alert("Chamado criado com sucesso!");
-            window.location.href = "/Dashboard/Cliente";
+            if (resultado.perfil === 1) {
+                window.location.href = "/Dashboard/Analista";
+            } else {
+                window.location.href = "/Dashboard/Cliente";
+            }
         } else {
-            const erro = await response.text();
-            console.error("Erro:", erro);
-            alert("Erro ao criar chamado.");
+            msgLogin.textContent = "Erro ao realizar login. Verifique suas credenciais.";
+            msgLogin.style.color = "red";
         }
 
     } catch (error) {
-        console.error("Erro ao conectar:", error);
-        alert("Erro ao conectar com o servidor.");
+        console.error("Erro ao chamar a API:", error);
     }
 });
