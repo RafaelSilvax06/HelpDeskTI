@@ -1,0 +1,148 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #eeeeee;
+    overflow: hidden;
+}
+
+.page-wrapper {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: #eeeeee;
+    border: none;
+}
+
+/* Topo */
+.topbar {
+    height: 70px;
+    background: #11192d;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding-left: 26px;
+}
+
+.logo {
+    width: 28px;
+    margin-right: 210px;
+}
+
+.topbar span {
+    font-size: 16px;
+}
+
+/* Conteúdo */
+.main-content {
+    display: grid;
+    grid-template-columns: 600px 1fr;
+    height: calc(100% - 70px);
+}
+
+/* Lado esquerdo */
+.left-panel {
+    background: #11192d;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 140px;
+}
+
+    .left-panel p {
+        font-size: 20px;
+        margin-bottom: 70px;
+    }
+
+    .left-panel img {
+        width: 260px;
+    }
+
+/* Lado direito */
+.right-panel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 28px;
+}
+
+.back-arrow {
+    position: absolute;
+    left: 45px;
+    top: 38px;
+    color: #111;
+    font-size: 34px;
+    text-decoration: none;
+}
+
+/* Card do formulário */
+.form-card {
+    width: 590px;
+    height: 660px;
+    background: #11192d;
+    border-radius: 10px;
+    color: white;
+    padding: 60px 36px;
+}
+
+    .form-card h1 {
+        text-align: center;
+        font-size: 22px;
+        font-weight: 400;
+        margin-bottom: 55px;
+    }
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+input,
+select,
+textarea {
+    height: 31px;
+    border: none;
+    border-radius: 7px;
+    background: white;
+    margin-bottom: 28px;
+    padding: 6px 10px;
+    outline: none;
+    font-size: 13px;
+}
+
+textarea {
+    resize: none;
+}
+
+button {
+    width: 145px;
+    height: 38px;
+    border: none;
+    border-radius: 7px;
+    background: #003f80;
+    color: white;
+    font-size: 13px;
+    margin: 45px auto 0;
+    cursor: pointer;
+}
+
+    button:hover {
+        background: #0052a8;
+    }
+
+#novo-chamado-message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 13px;
+}
