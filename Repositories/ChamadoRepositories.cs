@@ -113,13 +113,15 @@ namespace HelpDeskTI.Repositories
             // Permite ao analista assumir (adicionar) o chamado a ele
             if (chamado.Analista != null && chamadoExistente.Analista == null)
             {
-                atenderChamado(chamadoExistente);
+                atenderChamado(chamadoExistente.Id, chamado.Analista);
             }
 
             if (chamadoExistente.Analista == null)
             {
                 throw new Exception("Os dados do chamado só podem ser atualizados após ser atribuído a um analista.");
-            } if else (chamado.Analista == null || chamadoExistente.Analista.Id != chamado.Analista.Id){
+            }
+            else if (chamado.Analista == null || chamadoExistente.Analista.Id != chamado.Analista.Id)
+            {
                 throw new Exception("Você só pode atualizar os dados de um chamado que está atribuído a você.");
             }
 

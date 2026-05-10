@@ -95,18 +95,5 @@ namespace HelpDeskTI.Services
             return chamadoRespositories.atenderChamado(id, SessaoUsuario.UsuarioLogado);
         }
 
-
-         public Chamado finalizarChamado(long id)
-        {
-            if (SessaoUsuario.UsuarioLogado == null)
-            {
-                throw new Exception("Usuário não está logado.");
-            }
-            if(id <= 0)
-            {
-                throw new Exception("ID de chamado inválido.");
-            }
-            return chamadoRespositories.FinalizarChamado(id, SessaoUsuario.UsuarioLogado);
-         }
     }
 }
