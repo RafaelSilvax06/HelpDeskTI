@@ -10,6 +10,7 @@ namespace HelpDeskTI.Models
         [JsonIgnore]
         public Chamado? Chamado { get; set; }
 
+
         public Usuario? autor { get; set; }
 
         public string mensagem { get; set; } = string.Empty;
