@@ -3,10 +3,17 @@ using HelpDeskTI.Data;
 using HelpDeskTI.Services;
 using HelpDeskTI.Repositories;
 
+using System.Text.Json.Serialization;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add os serviços
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+    });
 
 // Add o Swagger
 builder.Services.AddEndpointsApiExplorer();
@@ -19,8 +26,6 @@ builder.Services.AddScoped<UsuarioRepositories>();
 
 builder.Services.AddScoped<ChamadoService>();      
 builder.Services.AddScoped<ChamadoRepositories>(); 
-
-builder.Services.AddControllers();
 
 // BD SQLLite
 builder.Services.AddDbContext<AppDbContext>(options =>
