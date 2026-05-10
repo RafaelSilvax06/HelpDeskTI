@@ -1,0 +1,58 @@
+﻿@{
+    Layout = null;
+    ViewData["Title"] = "Novo Chamado";
+}
+
+<link rel="stylesheet" href="~/css/novo-chamado.css" />
+
+<div class="page-wrapper">
+    <header class="topbar">
+        <img src="~/img/logo_site_icon.png" alt="Logo" class="logo" />
+        <span>HelpDesk Pro System</span>
+    </header>
+
+    <main class="main-content">
+        <section class="left-panel">
+            <p>Precisando de ajuda?</p>
+            <img src="~/img/logo_site.png" alt="Gato HelpDesk" />
+        </section>
+
+        <section class="right-panel">
+            <a href="/Dashboard/Cliente" class="back-arrow">←</a>
+
+            <div class="form-card">
+                <h1>Abra seu chamado</h1>
+
+                <form id="novo-chamado-form">
+                    <label for="titulo">Título</label>
+                    <input type="text" id="titulo" required />
+
+                    <label for="descricao">Descrição do chamado</label>
+                    <input type="text" id="descricao" required />
+
+                    <label for="prioridade">Prioridade</label>
+                    <select id="prioridade">
+                        <option value="0">Baixa</option>
+                        <option value="1">Média</option>
+                        <option value="2">Alta</option>
+                    </select>
+
+                    <label for="categoria">Categoria</label>
+                    <select id="categoria">
+                        <option value="0">Suporte</option>
+                        <option value="1">Desenvolvimento</option>
+                        <option value="2">Infraestrutura</option>
+                        <option value="3">Redes</option>
+                        <option value="4">Bug</option>
+                    </select>
+
+                    <button type="submit">Confirmar</button>
+
+                    <p id="novo-chamado-message"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+</div>
+
+<script src="~/js/novo-chamado.js"></script>

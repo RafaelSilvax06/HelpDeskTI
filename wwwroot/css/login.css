@@ -1,0 +1,154 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+}
+
+body {
+    background-color: #fff;
+}
+
+.login-header {
+    height: 68px;
+    background-color: #12192F;
+}
+
+    .login-header .container {
+        max-width: 1140px;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+    }
+
+.header-title h1 {
+    color: #fff;
+    font-weight: 300;
+}
+
+.login-main {
+    width: 100%;
+    min-height: calc(100vh - 68px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.section-login-page {
+    width: 60%;
+    min-height: calc(100vh - 68px);
+    background-color: #fff;
+    padding: 8rem 0;
+}
+
+.section-welcome-page {
+    width: 40%;
+    min-height: calc(100vh - 68px);
+    background-color: #12192F;
+    padding: 8rem 0;
+    text-align: center;
+}
+
+.container-wrapper {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.section-login-title h2 {
+    color: #161616;
+    margin-bottom: 2rem;
+}
+
+.login-form-inputs label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #161616;
+}
+
+.login-form-inputs input {
+    width: 100%;
+    height: 38px;
+    padding: 0 0.8rem;
+    outline: none;
+    border-radius: 8px;
+    border: 1px solid #d9d9d9;
+    margin-bottom: 1.5rem;
+    color: #161616;
+    margin-top: 2rem;
+}
+
+.login-form-button-forgot a,
+.login-form-button-create-account {
+    margin-top: 3rem;
+    text-align: left;
+}
+
+.login-form-button button {
+    width: 100px;
+    height: 42px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #fff;
+    border: none;
+    background-color: #0A3871;
+    cursor: pointer;
+    margin-top: 2rem;
+    border-radius: 9px;
+}
+
+.login-form-button-create-account {
+    width: 275px;
+    margin-top: 6rem;
+    text-align: end;
+}
+
+#login-message {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+.section-welcome-title h2 {
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.section-welcome-image img {
+    height: 385px;
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.section-welcome-description p {
+    color: #fff;
+    margin-top: 1.4rem;
+}
+
+@media (max-width: 900px) {
+    .login-main {
+        flex-direction: column;
+    }
+
+    .section-login-page,
+    .section-welcome-page {
+        width: 100%;
+        min-height: auto;
+        padding: 3rem 1.5rem;
+    }
+
+    .login-form-inputs input {
+        width: 100%;
+    }
+
+    .login-form-button-create-account {
+        width: 100%;
+        text-align: left;
+    }
+
+    .section-welcome-image img {
+        height: 240px;
+    }
+}
