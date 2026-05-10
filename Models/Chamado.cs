@@ -20,11 +20,11 @@ namespace HelpDeskTI.Models
 
         public required Setor Categoria { get; set; }
 
-        public string? Comentarios { get; set; }
+        public List<Comentario> Comentarios { get; set; } = new();
 
         public DateTime DataAbertura { get; set; }
 
-        public DateTime DataAtualizacao { get; set; }      
+        public DateTime DataAtualizacao { get; set; }
 
         public DateTime DataFechamento { get; set; }
 
