@@ -28,7 +28,7 @@ form.addEventListener("submit", async function (event) {
         console.log("Status HTTP:", response.status);
 
         if (response.ok) {
-            if (resultado.perfil === 1) {
+            if (resultado.perfil === "Analista" ) {
                 window.location.href = "/Dashboard/Analista";
             } else {
                 window.location.href = "/Dashboard/Cliente";
