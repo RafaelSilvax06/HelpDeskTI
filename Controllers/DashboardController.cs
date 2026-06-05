@@ -22,6 +22,14 @@ public class DashboardController : Controller
         var chamados = _context.Chamados.ToList();
         return View(chamados);
     }
+    public IActionResult DetalhesAnalista()
+    {
+        return View();
+    }
+    public IActionResult AtualizarChamado()
+    {
+        return View();
+    }
 
 }
 
