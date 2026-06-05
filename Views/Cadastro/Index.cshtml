@@ -1,0 +1,44 @@
+@{
+	ViewData["Title"] = "Cadastro";
+}
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/cadastro.css" />
+}
+
+<main class="cadastro-main">
+	<div class="container-main">
+		<section class="cadastro-image">
+			<img src="~/img/logo_site.png" alt="">
+            </section>
+		<section class="cadastro-form">
+			<div class="cadastro-form-retornar">
+				<a href="#" class="retornar">
+					<img src="~/img/return.png" alt="">
+                    </a>
+			</div>
+			<div class="cadastro-form-title">
+				<h2>Cadastro</h2>
+			</div>
+			<form action="#" method="#" class="form-cadastro">
+				<div class="form-group">
+					<label for="name">Nome</label>
+					<input type="text" name="name" id="name">
+
+						<label for="cpf">Cpf</label>
+						<input type="number" name="cpf" id="cpf">
+
+							<label for="email">E-mail</label>
+							<input type="text" name="email" id="email">
+
+								<label for="senha">Senha</label>
+								<input type="password" name="senha" id="senha">
+
+									<div class="form-button-register">
+										<button type="submit" class="button-register">Cadastrar</button>
+									</div>
+								</div>
+			</form>
+		</section>
+	</div>
+</main>
