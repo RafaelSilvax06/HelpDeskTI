@@ -1,0 +1,197 @@
+/* Main */
+
+.container-main {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.return-page {
+    padding: 1rem 0;
+}
+
+.return-page > a > img {
+    height: 49px;
+}
+
+.ticket-layout {
+    display: flex;
+    gap: 40px;
+}
+
+.detalhes-ticket-inf {
+    flex: 1;
+    background-color: #12192FF7;
+    padding: 1.5rem;
+    border-radius: 13px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1,
+h2,
+h3,
+p {
+    color: #fff;
+    margin: 0;
+}
+
+.ticket-subtitle,
+.ticket-titulo > span,
+.ticket-description > span {
+    color: #989191E9;
+}
+
+.ticket-titulo > span {
+    font-size: 16px;
+}
+
+.ticket-titulo h1 {
+    font-size: 20px;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.ticket-titulo,
+.ticket-status-priority {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ticket-status-priority span {
+    padding: 4px 14px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    display: block;
+}
+
+.button-status-inf {
+    color: #12192F;
+}
+
+.button-status-priority {
+    color: #A40000;
+}
+
+.ticket-description {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+.ticket-description span {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.ticket-information-user {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.badge-userinf {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.badge-userinf img {
+    height: 35px;
+}
+
+.badge-userinf span {
+    color: #fff;
+}
+
+.ticket-responsible-analista {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 10px 0 10px 0;
+}
+
+.ticket-comment-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.text-color-seg {
+    color: #000;
+}
+
+.ticket-responsible-comment {
+    max-height: 70px;
+    overflow-y: auto;
+}
+
+.inf-called {
+    width: 320px;
+    flex-shrink: 0;
+
+    height: 300px;
+    border-radius: 12px;
+    padding: 1rem;
+    border: 4px solid #12192F;
+}
+
+.inf-called-status {
+    display: flex;
+}
+
+.inf-called-title h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #12192F;
+    margin-bottom: 2.2rem;
+}
+
+.inf-called-status > span {
+    width: 150px;
+    padding: 4px 0;
+    display: inline-block;
+    text-align: center;
+    border-radius: 9px;
+    margin-bottom: 1.5rem;
+}
+
+.btn-sts-right {
+    background-color: #B7BBCA;
+    color: #12192F;
+    position: relative;
+    left: 20px;
+}
+
+.btn-sts-left {
+    background-color: #12192F;
+    color: #B7BBCA;
+    z-index: 1;
+}
+
+.inf-called-button-assume {
+    text-align: center;
+}
+
+.inf-called-button-assume button {
+    width: 200px;
+    background-color: #12192F;
+    color: #fff;
+    border: none;
+    padding: 6px 0;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: 0.2s;
+}
+
+.inf-called-button-assume button:hover {
+    opacity: 0.9;
+}

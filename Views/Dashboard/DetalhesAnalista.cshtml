@@ -1,0 +1,146 @@
+@{
+	ViewData["Title"] = "Cadastro";
+}
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/detalhes-analista.css" />
+}
+
+<main class="detalhes-analista">
+    <div class="container-main">
+
+        <div class="return-page">
+            <a href="#">
+                <img src="~/img/return.png" alt="Voltar">
+            </a>
+        </div>
+
+        <div class="ticket-layout">
+
+            <article class="detalhes-ticket-inf">
+
+                <header class="ticket-header">
+                    <div class="ticket-titulo">
+                        <span>Título</span>
+                        <h1>Problema no sistema de login</h1>
+                    </div>
+
+                    <div class="ticket-status-priority">
+                        <span class="button-status-inf">Aberto</span>
+                        <span class="button-status-priority">Alta</span>
+                    </div>
+                </header>
+
+                <section class="ticket-description">
+                    <span>Descrição</span>
+
+                    <p>
+                        Usuários estão relatando dificuldade para acessar o sistema.
+                        O botão de login não responde após inserir as credenciais.
+                    </p>
+                </section>
+
+                <section class="ticket-information-user">
+
+                    <div class="ticket-applicant">
+                        <span class="ticket-subtitle">Solicitante</span>
+
+                        <div class="badge-userinf">
+                            <img src="~/img/icons/user_2.png" alt="Usuário">
+                            <span>Maria de Lourdes</span>
+                        </div>
+                    </div>
+
+                    <div class="ticket-responsible">
+                        <span class="ticket-subtitle">Responsável</span>
+
+                        <div class="badge-userinf">
+                            <img src="~/img/icons/user_2.png" alt="Usuário">
+                            <span>Georgia Ligia</span>
+                        </div>
+                    </div>
+
+                    <div class="ticket-date">
+                        <span class="ticket-subtitle">Data de Criação</span>
+
+                        <div class="badge-userinf">
+                            <img src="~/img/icons/time.png" alt="Data">
+                            <span>01/04/2026 às 15:00</span>
+                        </div>
+                    </div>
+
+                    <div class="ticket-update">
+                        <span class="ticket-subtitle">Última Atualização</span>
+
+                        <div class="badge-userinf">
+                            <img src="~/img/icons/time.png" alt="Data">
+                            <span>01/04/2026 às 16:30</span>
+                        </div>
+                    </div>
+
+                    <div class="ticket-category">
+                        <span class="ticket-subtitle">Categoria</span>
+
+                        <div class="badge-userinf">
+                            <img src="~/img/icons/warning.png" alt="Categoria">
+                            <span>Sistema</span>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="ticket-responsible-analista">
+
+                    <div class="ticket-comment-header">
+
+                        <div class="ticket-responsible-name">
+                            <span>Responsável:</span>
+                            <span class="text-color-seg">Georgia Ligia</span>
+                        </div>
+
+                        <div class="ticket-responsible-date">
+                            <span>Data:</span>
+                            <span class="text-color-seg">01/04/2026 às 16:30</span>
+                        </div>
+
+                    </div>
+
+                    <div class="ticket-responsible-comment">
+                        <p class="text-color-seg">
+                            Ajustamos o erro e já está funcionando.
+                            Poderia testar?
+                        </p>
+                    </div>
+
+                </section>
+
+            </article>
+
+            <aside class="inf-called">
+
+                <div class="inf-called-title">
+                    <h2>Informações sobre o chamado</h2>
+                </div>
+
+                <div class="inf-called-status">
+                    <span class="btn-sts-right">Status:</span>
+                    <span class="btn-sts-left">Aberto</span>
+                </div>
+
+                <div class="inf-called-status">
+                    <span class="btn-sts-right">Prioridade:</span>
+                    <span class="btn-sts-left">Alta</span>
+                </div>
+
+                <div class="inf-called-button-assume">
+                    <button type="button">
+                        Assumir chamado
+                    </button>
+                </div>
+
+            </aside>
+
+        </div>
+
+    </div>
+</main>
