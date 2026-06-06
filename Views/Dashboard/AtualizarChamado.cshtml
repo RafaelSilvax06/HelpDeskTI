@@ -1,0 +1,93 @@
+@{
+	ViewData["Title"] = "AtualizarChamado";
+}
+
+@section Styles {
+	<link rel="stylesheet" href="~/css/atualizar-chamado.css" />
+}
+
+<main class="detalhes-analista">
+        <div class="container-main">
+            <section class="return-page">
+                <a href="#">
+                    <img src="~/img/return.png" alt="">
+                </a>
+            </section>
+            <div class="dsp-flex">
+                <section class="detalhes-ticket-inf">
+                    <div class="ticket-header">
+                        <div class="ticket-titulo">
+                            <span>Título</span>
+                            <h2>Problema no sistema de login</h2>
+                        </div>
+                        <div class="ticket-status-priority">
+                            <span class="button-status-inf">Aberto</span>
+                            <span class="button-status-priority">Alta</span>
+                        </div>
+                    </div>
+                    <div class="ticket-description">
+                        <span>Descrição</span>
+                        <p>Usuários estão relatando dificuldade para acessar o sistema. O botão de login não responde após inserir as credenciais.</p>
+                    </div>
+                    <div class="ticket-information-user">
+                        <div class="ticket-applicant">
+                            <span class="ticket-subtitle">Solicitante</span>
+                            <div class="badge-userinf">
+                                <img src="~/img/icons/user_2.png" alt="">
+                                <span>Maria de Lourdes</span>
+                            </div>
+                        </div>
+                        <div class="ticket-responsible">
+                            <span class="ticket-subtitle">Responsável</span>
+                            <div class="badge-userinf">
+                                <img src="~/img/icons/user_2.png" alt="">
+                                <span>Georgia Ligia</span>
+                            </div>
+                        </div>
+                        <div class="ticket-date">
+                            <span class="ticket-subtitle">Data de Criação</span>
+                            <div class="badge-userinf">
+                                <img src="~/img/icons/time.png" alt="">
+                                <span>01/04/2026 às 15:00</span>
+                            </div>
+                        </div>
+                        <div class="ticket-update">
+                            <span class="ticket-subtitle">Última Atualização</span>
+                            <div class="badge-userinf">
+                                <img src="~/img/icons/time.png" alt="">
+                                <span>01/04/2026 às 16:30</span>
+                            </div>
+                        </div>
+                        <div class="ticket-category">
+                            <span class="ticket-subtitle">Categoria</span>
+                            <div class="badge-userinf">
+                                <img src="~/img/icons/warning.png" alt="">
+                                <span>Sistema</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="inf-called">
+                    <div class="inf-called-analyst">
+                        <span>Analista: Georgia</span>
+                    </div>
+                    <div class="inf-called-status-list">
+                        <div class="inf-called-status">
+                            <span class="btn-sts-right">Status:</span>
+                            <span class="btn-sts-left">Atendimento</span>
+                        </div>
+                        <div class="inf-called-status">
+                            <span class="btn-sts-right">Prioridade:</span>
+                            <span class="btn-sts-left">Alta</span>
+                        </div>
+                    </div>
+                    <div class="inf-called-button-update btn-est">
+                        <button>Atualizar</button>
+                    </div>
+                    <div class="inf-called-button-close btn-est">
+                        <button>Fechar</button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>

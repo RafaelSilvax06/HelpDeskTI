@@ -1,0 +1,195 @@
+.container-main {
+    max-width: 1300px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.return-page {
+    padding: 1rem 0;
+}
+
+.return-page > a > img{
+    height: 49px;
+}
+
+.dsp-flex {
+    display: flex;
+    gap: 40px;
+}
+
+.mg-bt {
+    margin-bottom: 14px;
+}
+
+.detalhes-ticket-inf {
+    background-color: #12192FF7;
+    padding: 1.5rem;
+    border-radius: 13px;
+}
+
+span {
+    color: #989191E9;
+}
+
+h1, h2, h3,p  {
+    color: #fff;
+}
+
+.detalhes-ticket-inf {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.ticket-titulo span {
+    font-size: 16px;
+}
+
+.ticket-titulo h2 {
+    font-size: 20px;
+}
+
+.ticket-titulo, .ticket-status-priority {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.ticket-status-priority span {
+    padding: 4px 14px;
+    border-radius: 10px;
+    background-color: #fff;
+    text-align: center;
+    display: block;
+}
+
+.button-status-inf {
+    color: #12192F;
+}
+
+.button-status-priority {
+    color: #A40000;
+}
+
+.ticket-description {
+    padding-bottom: 20px;
+    border-bottom: 1px solid #fff;
+}
+
+.ticket-description span {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.ticket-information-user {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+.badge-userinf {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 6px;
+}
+
+.badge-userinf img {
+    height: 35px;
+}
+
+.badge-userinf span {
+    color: #fff;
+}
+
+
+.inf-called {
+    width: 30%;
+    border-radius: 12px;
+    padding: 2rem 1rem;
+    border: 4px solid #12192F;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inf-called-analyst {
+    flex: 10%;
+}
+.inf-called-status-list {
+    flex: 70%;
+}
+.inf-called-button-assume {
+    flex: 20%;
+}
+
+
+.inf-called-title h2 {
+    text-align: center;
+    font-size: 18px;
+    color: #12192F;
+    margin-bottom: 2.2rem;
+}
+
+.inf-called-status > span {
+    width: 150px;
+    padding: 4px 0;
+    display: inline-block;
+    text-align: center;
+    border-radius: 9px;
+    margin-bottom: 1.5rem;
+}
+
+.inf-called-analyst {
+    width: 100%;
+    text-align: left;
+}
+
+.inf-called-analyst span {
+    color: #12192F;
+}
+
+.btn-sts-right {
+    background-color: #B7BBCA;
+    color: #12192F;
+    position: relative;
+    left: 20px;
+}
+
+.btn-sts-left {
+    background-color: #12192F;
+    color: #B7BBCA;
+    z-index: 1;
+}
+
+.inf-called-button-assume {
+    text-align: center;
+}
+
+.btn-est button {
+    width: 200px;
+    border: none;
+    padding: 6px 0px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 1.5rem;
+}
+
+.inf-called-button-update button{
+    background-color: #12192F;
+    color: #fff;
+}
+
+.inf-called-button-close button{
+    background-color: #fff;
+    color: #12192F;
+    border: 2px solid #12192F;
+}
