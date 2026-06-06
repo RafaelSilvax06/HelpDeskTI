@@ -26,6 +26,10 @@ public class DashboardController : Controller
     {
         return View();
     }
+    public IActionResult DetalhesUsuario()
+    {
+        return View();
+    }
     public IActionResult AtualizarChamado()
     {
         return View();
