@@ -121,10 +121,25 @@ body {
     color: red;
 }
 
+
+
 .chamado-info {
     display: flex;
     gap: 32px;
     margin-top: 28px;
     font-size: 15px;
 }
+
+.btn-Detalhes {
+    background-color: #1E3A8A;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+    .btn-Detalhes:hover {
+        background-color: #2563EB;
+    }
 
