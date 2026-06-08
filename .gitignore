@@ -365,3 +365,10 @@ FodyWeavers.xsd
 /helpdesk.db-wal
 /.gitignore
 /.gitignore
+*.db-shm
+*.db-wal
+*.db-journal
+bin/
+obj/
+.vs/
+*.db
