@@ -3,12 +3,17 @@ Layout = null;
 ViewData["Title"] = "Cliente";
 }
 
+<head>
+    <link rel="stylesheet" href="~/css/dashboard-clientes.css" asp-append-version="true">
+</head>
+
 @model List<HelpDeskTI.Models.Chamado>
+
 
 <header class="dashboard-header">
     <div class="dashboard-logo">HelpDesk Pro System</div>
     <div class="dashboard-user">Cliente</div>
-    <link rel="stylesheet" href="/css/dashboard-clientes.css" />
+
 </header>
 
 <main class="dashboard-container">
@@ -38,6 +43,7 @@ ViewData["Title"] = "Cliente";
                 <div class="chamado-tags">
                     <span class="status">@chamado.Status</span>
                     <span class="prioridade">@chamado.Prioridade</span>
+                    <button class="btn-Detalhes">Detalhes</button>
                 </div>
 
                 <div class="chamado-info">
