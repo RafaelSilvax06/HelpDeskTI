@@ -55,10 +55,10 @@ namespace HelpDeskTI.Repositories
                 .Where(c => c.Analista != null && c.Analista.Id == analista.Id && c.Status == StatusChamado.EmAndamento)
                 .ToList();
 
-            if (chamadosDoAnalista.Count == 0)
-            {
-                throw new Exception("Não existe nenhum chamado em andamento com este analista atribuído.");
-            }
+            // if (chamadosDoAnalista.Count == 0)
+            // {
+            //     throw new Exception("Não existe nenhum chamado em andamento com este analista atribuído.");
+            // }
 
             return chamadosDoAnalista;
         }
@@ -70,10 +70,10 @@ namespace HelpDeskTI.Repositories
                 .Include(c => c.Analista)
                 .Where(c => c.Solicitante != null && c.Solicitante.Id == usuario.Id).ToList();
 
-            if (chamadoUsuario.Count == 0)
-            {
-                throw new Exception("Não existe nenhum chamado para este usuário.");
-            }
+            // if (chamadoUsuario.Count == 0)
+            // {
+            //     throw new Exception("Não existe nenhum chamado para este usuário.");
+            // }
 
             return chamadoUsuario;
         }
