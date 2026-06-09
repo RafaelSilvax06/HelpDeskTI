@@ -372,6 +372,3 @@ bin/
 obj/
 .vs/
 *.db
-/helpdesk.db-shm
-/helpdesk.db-wal
-/helpdesk.db
