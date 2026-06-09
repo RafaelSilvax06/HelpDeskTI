@@ -62,6 +62,16 @@
     padding: 0 10px;
 }
 
+.form-group select {
+    height: 35px;
+    background-color: transparent;
+    border: none;
+    border-radius: 9px;
+    padding: 0 10px;
+    font-family: inherit;
+    cursor: pointer;
+}
+
 .form-button-register {
     text-align: center;
     margin-top: 2rem;
@@ -75,4 +85,29 @@
     border: none;
     color: #fff;
     cursor: pointer;
+}
+
+.button-register:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+/* Estilos para mensagens e validação */
+.cadastro-mensagem {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    display: none;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.erro-campo {
+    color: #e74c3c;
+    font-size: 0.75rem;
+    display: none;
+    margin-top: 0.25rem;
+    font-weight: 500;
+}
 }

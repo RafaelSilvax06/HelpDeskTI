@@ -12,7 +12,16 @@
 
 <header class="dashboard-header">
     <div class="dashboard-logo">HelpDesk Pro System</div>
-    <div class="dashboard-user">Analista</div>
+    <div class="dashboard-user">
+        @if (ViewBag.UsuarioLogado != null)
+        {
+            <span>@ViewBag.UsuarioLogado.Nome</span>
+        }
+        else
+        {
+            <span>Analista</span>
+        }
+    </div>
 </header>
 
 <main class="dashboard-container">
@@ -21,31 +30,42 @@
     </section>
 
     <section class="dashboard-filters">
-        <button>Todos os status</button>
-        <button>Meus atendimentos</button>
+        <button id="btn-abertos" class="btn-filtro active">Chamados Abertos</button>
+        <button id="btn-atendimentos" class="btn-filtro">Meus atendimentos</button>
     </section>
 
-    <section class="chamados-list">
-        @foreach (var chamado in Model)
+    <section id="chamados-list" class="chamados-list">
+        @if (Model == null || Model.Count == 0)
         {
-            <article class="chamado-card">
-                <div>
-                    <h2>@chamado.Titulo</h2>
-                    <p>@chamado.Descricao</p>
-                </div>
+            <div class="mensagem-vazia">
+                <p>Nenhum chamado disponível no momento.</p>
+            </div>
+        }
+        else
+        {
+            @foreach (var chamado in Model)
+            {
+                <article class="chamado-card">
+                    <div>
+                        <h2>@chamado.Titulo</h2>
+                        <p>@chamado.Descricao</p>
+                    </div>
 
-                <div class="chamado-tags">
-                    <span class="status">@chamado.Status</span>
-                    <span class="prioridade">@chamado.Prioridade</span>
-                    <button class="btn-Detalhes">Detalhes</button>
-                </div>
+                    <div class="chamado-tags">
+                        <span class="status">@chamado.Status</span>
+                        <span class="prioridade">@chamado.Prioridade</span>
+                        <button class="btn-Detalhes">Detalhes</button>
+                    </div>
 
-                <div class="chamado-info">
-                    <span>@(chamado.Solicitante?.Nome ?? "Sem solicitante")</span>
-                    <span>@chamado.DataAbertura.ToString("dd/MM/yyyy")</span>
-                    <span>@chamado.Categoria</span>
-                </div>
-            </article>
+                    <div class="chamado-info">
+                        <span>@(chamado.Solicitante?.Nome ?? "Sem solicitante")</span>
+                        <span>@chamado.DataAbertura.ToString("dd/MM/yyyy")</span>
+                        <span>@chamado.Categoria</span>
+                    </div>
+                </article>
+            }
         }
     </section>
 </main>
+
+<script src="~/js/dashboard-analista.js" asp-append-version="true"></script>

@@ -10,35 +10,50 @@
 	<div class="container-main">
 		<section class="cadastro-image">
 			<img src="~/img/logo_site.png" alt="">
-            </section>
+			</section>
 		<section class="cadastro-form">
 			<div class="cadastro-form-retornar">
 				<a href="/Login/Index" class="retornar">
 					<img src="~/img/return.png" alt="">
-                    </a>
+					</a>
 			</div>
 			<div class="cadastro-form-title">
 				<h2>Cadastro</h2>
 			</div>
-			<form action="#" method="#" class="form-cadastro">
+			<div id="cadastro-message" class="cadastro-mensagem"></div>
+			<form id="form-cadastro" class="form-cadastro">
 				<div class="form-group">
-					<label for="name">Nome</label>
-					<input type="text" name="name" id="name">
+					<label for="nome">Nome</label>
+					<input type="text" name="nome" id="nome" placeholder="Digite seu nome completo">
+					<span class="erro-campo" id="erro-nome"></span>
 
-						<label for="cpf">Cpf</label>
-						<input type="number" name="cpf" id="cpf">
+					<label for="cpf">CPF</label>
+					<input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" maxlength="14">
+					<span class="erro-campo" id="erro-cpf"></span>
 
-							<label for="email">E-mail</label>
-							<input type="text" name="email" id="email">
+					<label for="email">E-mail</label>
+					<input type="email" name="email" id="email" placeholder="seu.email@exemplo.com">
+					<span class="erro-campo" id="erro-email"></span>
 
-								<label for="senha">Senha</label>
-								<input type="password" name="senha" id="senha">
+					<label for="senha">Senha</label>
+					<input type="password" name="senha" id="senha" placeholder="Mínimo 8 caracteres">
+					<span class="erro-campo" id="erro-senha"></span>
 
-									<div class="form-button-register">
-										<button type="submit" class="button-register">Cadastrar</button>
-									</div>
-								</div>
+					<label for="perfil">Perfil</label>
+					<select name="perfil" id="perfil">
+						<option value="">-- Selecione um perfil --</option>
+						<option value="0">Cliente</option>
+						<option value="1">Analista</option>
+					</select>
+					<span class="erro-campo" id="erro-perfil"></span>
+
+					<div class="form-button-register">
+						<button type="submit" class="button-register">Cadastrar</button>
+					</div>
+				</div>
 			</form>
 		</section>
 	</div>
 </main>
+
+<script src="~/js/cadastro.js"></script>
