@@ -64,6 +64,7 @@ O sistema permite que usuários abram chamados e acompanhem o andamento do atend
 - Tela Detalhes Usuario
 <img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/0d1a79e2-e60d-4fe5-a046-23467f903927" />
 - Tela Atualizar Chamado
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/d0a0dbee-d68c-4939-8af4-3c744b841393" />
 
 
 
