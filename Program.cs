@@ -68,13 +68,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthorization();
+
 //  Ativar Swagger
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.MapControllers();
-
-app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",

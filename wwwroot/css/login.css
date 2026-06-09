@@ -8,6 +8,7 @@
 
 body {
     background-color: #fff;
+    overflow-y: hidden;
 }
 
 .login-header {
@@ -22,6 +23,7 @@ body {
         margin: 0 auto;
         display: flex;
         align-items: center;
+        padding: 0rem 1rem;
     }
 
 .header-title h1 {
