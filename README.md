@@ -48,6 +48,26 @@ O sistema permite que usuários abram chamados e acompanhem o andamento do atend
 * Cadastro de novos clientes ou analistas
 
 ---
+## 💻 Telas Do Projeto
+- Tela Login
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/5830d70f-35ae-4170-9db4-ef5f289be398" />
+- Tela Dashboard Analista
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/2d31353e-4883-4ade-bc26-4a55f45fdfcf" />
+- Tela Dashboard Cliente
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/3eaa6cf8-2ae3-4c85-a8c9-c366a8b4b15a" />
+- Tela Novo Chamado
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/d3430233-af52-41fe-ab9f-696087d8cdd4" />
+- Tela Cadastro Cliente / Analista
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/a1245567-5ef8-47a4-8040-deefde8b10e9" />
+- Tela Detalhes Analista
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/991c609f-b977-4033-baf5-34b237ca8c22" />
+- Tela Detalhes Usuario
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/0d1a79e2-e60d-4fe5-a046-23467f903927" />
+- Tela Atualizar Chamado
+
+
+
+
 
 # 🚀 Como Executar
 
