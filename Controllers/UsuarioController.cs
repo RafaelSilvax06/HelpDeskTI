@@ -10,13 +10,13 @@ namespace HelpDeskTI.Controllers
 	[ApiController]
 	[Route("api/usuarios")]
 	public class UsuarioController : ControllerBase
-    {
+	{
 
 		private readonly UsuarioService _usuarioService;
 
-        public UsuarioController(UsuarioService services)
+		public UsuarioController(UsuarioService services)
 		{
-            _usuarioService = services;
+			_usuarioService = services;
 		}
 
 
@@ -24,17 +24,31 @@ namespace HelpDeskTI.Controllers
 		[Route("cadastro")]
 		public ActionResult CriarUsuario([FromBody] Usuario usuario)
 		{
-			_usuarioService.CriarUsuario(usuario);
-			return Created("",usuario);
+			try
+			{
+				_usuarioService.CriarUsuario(usuario);
+				return Created("", usuario);
+			}
+			catch (Exception ex)
+			{
+				return BadRequest(new { message = ex.Message });
+			}
 		}
 
 		[HttpPost]
 		[Route("login")]
 		public ActionResult Login([FromBody] LoginRequestDTO request)
 		{
-			var usuario = _usuarioService.Login(request.Email, request.Senha);
-			HelpDeskTI.Sessao.SessaoUsuario.UsuarioLogado = usuario;
-			return Ok(usuario);
+			try
+			{
+				var usuario = _usuarioService.Login(request.Email, request.Senha);
+				HelpDeskTI.Sessao.SessaoUsuario.UsuarioLogado = usuario;
+				return Ok(usuario);
+			}
+			catch (Exception ex)
+			{
+				return Unauthorized(new { message = ex.Message });
+			}
 		}
-    }
+	}
 }
