@@ -15,6 +15,5 @@ namespace HelpDeskTI.Data
 
 		public DbSet<Chamado> Chamados { get; set; }
 
-		public DbSet<Comentario> Comentarios { get; set; }
 	}
 }

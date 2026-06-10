@@ -5,6 +5,7 @@ using System.Linq;
 using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using HelpDeskTI.DTO;
 
 namespace HelpDeskTI.Repositories
 {
@@ -43,7 +44,7 @@ namespace HelpDeskTI.Repositories
             return _context.Chamados
                 .Include(c => c.Solicitante)
                 .Include(c => c.Analista)
-                .Where(c => c.Status == StatusChamado.Aberto)
+                .Where(c => c.Status == StatusChamado.Aberto && c.Analista == null)
                 .ToList();
         }
 
@@ -93,7 +94,7 @@ namespace HelpDeskTI.Repositories
             return todos;
         }
 
-        public void AtualizarChamado(Chamado chamado, Usuario usuario)
+        public void AtualizarChamado(AtualizarChamadoRequestDTO chamado, Usuario usuario)
         {
             // Busca o chamado no banco já incluindo o relacionamento de analista
             var chamadoExistente = _context.Chamados
@@ -105,28 +106,35 @@ namespace HelpDeskTI.Repositories
                 throw new Exception("Chamado não encontrado.");
             }
 
-            // Permite ao analista assumir (adicionar) o chamado a ele
-            if (chamado.Analista != null && chamadoExistente.Analista == null)
-            {
-                atenderChamado(chamadoExistente.Id, chamado.Analista);
-            }
-
             if (chamadoExistente.Analista == null)
             {
-                throw new Exception("Os dados do chamado só podem ser atualizados após ser atribuído a um analista.");
+                throw new Exception("O chamado só pode ser atualizado após ser atribuído a um analista.");
             }
-            else if (chamado.Analista == null || chamadoExistente.Analista.Id != chamado.Analista.Id)
+            else if (chamadoExistente.Analista.Id != usuario.Id)
             {
-                throw new Exception("Você só pode atualizar os dados de um chamado que está atribuído a você.");
+                throw new Exception("Você só pode atualizar chamados atribuídos a você.");
             }
 
             // Atualiza os campos liberados
             chamadoExistente.Status = chamado.Status;
             chamadoExistente.Prioridade = chamado.Prioridade;
-            chamadoExistente.Comentarios = chamado.Comentarios;
 
             // Atualiza a data de alteração
             chamadoExistente.DataAtualizacao = DateTime.Now;
+
+            if (chamado.Status == StatusChamado.Aberto)
+            {
+                chamadoExistente.Analista = null;
+            }
+
+            if (chamado.Status == StatusChamado.Fechado)
+            {
+                chamadoExistente.DataFechamento = DateTime.Now;
+            }
+            else
+            {
+                chamadoExistente.DataFechamento = null;
+            }
 
             _context.SaveChanges();
         }
@@ -141,7 +149,11 @@ namespace HelpDeskTI.Repositories
             {
                 throw new Exception("Chamado não encontrado.");
             }
-            if (chamadoExistente.Analista != null)
+            if (chamadoExistente.Status == StatusChamado.Fechado)
+            {
+                throw new Exception("Chamado fechado não pode ser assumido.");
+            }
+            if (chamadoExistente.Analista != null && chamadoExistente.Status != StatusChamado.Aberto)
             {
                 throw new Exception("Este chamado já está atribuído a um analista.");
             }
@@ -169,6 +181,26 @@ namespace HelpDeskTI.Repositories
             }
 
             return chamado;
+        }
+
+        public void ExcluirChamado(long id, Usuario usuario)
+        {
+            var chamado = _context.Chamados
+                .Include(c => c.Solicitante)
+                .FirstOrDefault(c => c.Id == id);
+
+            if (chamado == null)
+            {
+                throw new Exception("Chamado não encontrado.");
+            }
+
+            if (chamado.Solicitante == null || chamado.Solicitante.Id != usuario.Id)
+            {
+                throw new Exception("Você só pode excluir chamados criados por você.");
+            }
+
+            _context.Chamados.Remove(chamado);
+            _context.SaveChanges();
         }
 
        

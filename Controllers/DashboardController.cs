@@ -95,20 +95,21 @@ public class DashboardController : Controller
         }
     }
 
-    public IActionResult DetalhesAnalista()
+    public IActionResult DetalhesAnalista(long id)
     {
-        return View();
+        var chamado = _chamadoService.DetalhesChamado(id);
+        return View(chamado);
     }
 
-    public IActionResult DetalhesUsuario()
+    public IActionResult DetalhesUsuario(long id)
     {
-        return View();
+        var chamado = _chamadoService.DetalhesChamado(id);
+        return View(chamado);
     }
-
-    public IActionResult AtualizarChamado()
+     public IActionResult AtualizarChamado(long id)
     {
-        return View();
+        var chamado = _chamadoService.DetalhesChamado(id);
+        return View(chamado);
     }
-
 }
 

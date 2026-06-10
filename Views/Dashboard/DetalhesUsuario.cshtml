@@ -2,6 +2,8 @@
 	ViewData["Title"] = "DetalhesUsuario";
 }
 
+@model HelpDeskTI.Models.Chamado
+
 @section Styles {
 	<link rel="stylesheet" href="~/css/detalhes-dashboard.css" />
 }
@@ -10,7 +12,7 @@
     <div class="container-main">
 
         <div class="return-page">
-            <a href="#">
+            <a href="/Dashboard/Cliente">
                 <img src="~/img/return.png" alt="Voltar">
             </a>
         </div>
@@ -22,22 +24,19 @@
                 <header class="ticket-header">
                     <div class="ticket-titulo">
                         <span>Título</span>
-                        <h1>Problema no sistema de login</h1>
+                        <h1>@Model.Titulo</h1>
                     </div>
 
                     <div class="ticket-status-priority">
-                        <span class="button-status-inf">Aberto</span>
-                        <span class="button-status-priority">Alta</span>
+                        <span class="button-status-inf">@Model.Status</span>
+                        <span class="button-status-priority">@Model.Prioridade</span>
                     </div>
                 </header>
 
                 <section class="ticket-description">
                     <span>Descrição</span>
 
-                    <p>
-                        Usuários estão relatando dificuldade para acessar o sistema.
-                        O botão de login não responde após inserir as credenciais.
-                    </p>
+                    <p>@Model.Descricao</p>
                 </section>
 
                 <section class="ticket-information-user">
@@ -47,7 +46,7 @@
 
                         <div class="badge-userinf">
                             <img src="~/img/icons/user_2.png" alt="Usuário">
-                            <span>Maria de Lourdes</span>
+                            <span>@Model.Solicitante?.Nome</span>
                         </div>
                     </div>
 
@@ -56,7 +55,7 @@
 
                         <div class="badge-userinf">
                             <img src="~/img/icons/user_2.png" alt="Usuário">
-                            <span>Georgia Ligia</span>
+                            <span>@(Model.Analista?.Nome ?? "Sem responsável")</span>
                         </div>
                     </div>
 
@@ -65,7 +64,7 @@
 
                         <div class="badge-userinf">
                             <img src="~/img/icons/time.png" alt="Data">
-                            <span>01/04/2026 às 15:00</span>
+                            <span>@Model.DataAbertura.ToString("dd/MM/yyyy HH:mm")</span>
                         </div>
                     </div>
 
@@ -74,7 +73,7 @@
 
                         <div class="badge-userinf">
                             <img src="~/img/icons/time.png" alt="Data">
-                            <span>01/04/2026 às 16:30</span>
+                            <span>@Model.DataAtualizacao.ToString("dd/MM/yyyy HH:mm")</span>
                         </div>
                     </div>
 
@@ -83,33 +82,8 @@
 
                         <div class="badge-userinf">
                             <img src="~/img/icons/warning.png" alt="Categoria">
-                            <span>Sistema</span>
+                            <span>@Model.Categoria</span>
                         </div>
-                    </div>
-
-                </section>
-
-                <section class="ticket-responsible">
-
-                    <div class="ticket-comment-header">
-
-                        <div class="ticket-responsible-name">
-                            <span>Responsável:</span>
-                            <span class="text-color-seg">Georgia Ligia</span>
-                        </div>
-
-                        <div class="ticket-responsible-date">
-                            <span>Data:</span>
-                            <span class="text-color-seg">01/04/2026 às 16:30</span>
-                        </div>
-
-                    </div>
-
-                    <div class="ticket-responsible-comment">
-                        <p class="text-color-seg">
-                            Ajustamos o erro e já está funcionando.
-                            Poderia testar?
-                        </p>
                     </div>
 
                 </section>
@@ -126,18 +100,25 @@
 
                     <div class="inf-called-status">
                         <span class="btn-sts-right">Status:</span>
-                        <span class="btn-sts-left">Aberto</span>
+                        <span class="btn-sts-left">@Model.Status</span>
                     </div>
 
                     <div class="inf-called-status">
                         <span class="btn-sts-right">Prioridade:</span>
-                        <span class="btn-sts-left">Alta</span>
+                        <span class="btn-sts-left">@Model.Prioridade</span>
                     </div>
 
                 </div>
 
                 <div class="inf-called-button">
-                    <button class="button-delete-call">Excluir</button>
+                    <button
+                        type="button"
+                        id="btn-excluir-chamado"
+                        data-id="@Model.Id"
+                        class="button-delete-call">
+                        Excluir
+                    </button>
+                    <p id="mensagem-excluir"></p>
                 </div>
 
             </aside>
@@ -147,3 +128,4 @@
 
     </div>
 </main>
+<script src="~/js/detalhes-usuario.js" asp-append-version="true"></script>

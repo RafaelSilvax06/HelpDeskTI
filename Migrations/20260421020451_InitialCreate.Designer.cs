@@ -47,17 +47,13 @@ namespace HelpDeskTI.Migrations
                     b.Property<int>("Categoria")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Comentarios")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime>("DataAbertura")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("DataAtualizacao")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DataFechamento")
+                    b.Property<DateTime?>("DataFechamento")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")

@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using HelpDeskTI.Models;
 using HelpDeskTI.Data;
+using HelpDeskTI.DTO;
 using HelpDeskTI.Repositories;
 using HelpDeskTI.Sessao;
 
@@ -25,7 +26,9 @@ namespace HelpDeskTI.Services
             }
 
             chamado.Solicitante = SessaoUsuario.UsuarioLogado;
-            chamado.Status = 0;
+            chamado.Status = StatusChamado.Aberto;
+            chamado.DataAbertura = DateTime.Now;
+            chamado.DataAtualizacao = DateTime.Now;
 
             chamadoRespositories.SalvarChamado(chamado);
         }
@@ -64,7 +67,7 @@ namespace HelpDeskTI.Services
             return chamadoRespositories.todosChamados(SessaoUsuario.UsuarioLogado);
         }
 
-        public void AtualizarChamado(Chamado chamado)
+        public void AtualizarChamado(AtualizarChamadoRequestDTO chamado)
         {
             if (SessaoUsuario.UsuarioLogado == null)
             {
@@ -93,6 +96,20 @@ namespace HelpDeskTI.Services
                 throw new Exception("ID de chamado inválido.");
             }
             return chamadoRespositories.atenderChamado(id, SessaoUsuario.UsuarioLogado);
+        }
+
+        public void ExcluirChamado(long id)
+        {
+            if (SessaoUsuario.UsuarioLogado == null)
+            {
+                throw new Exception("Usuário não está logado.");
+            }
+            if (id <= 0)
+            {
+                throw new Exception("ID de chamado inválido.");
+            }
+
+            chamadoRespositories.ExcluirChamado(id, SessaoUsuario.UsuarioLogado);
         }
 
     }

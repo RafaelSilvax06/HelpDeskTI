@@ -63,10 +63,17 @@ namespace HelpDeskTI.Controllers
 
         [HttpPost]
         [Route("atualizarChamado")]
-        public ActionResult AtualizarChamado([FromBody] Chamado chamado)
+        public ActionResult AtualizarChamado([FromBody] AtualizarChamadoRequestDTO chamado)
         {
-            _chamadoService.AtualizarChamado(chamado);
-            return Ok(chamado);
+            try
+            {
+                _chamadoService.AtualizarChamado(chamado);
+                return Ok(chamado);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
 
 
@@ -84,6 +91,21 @@ namespace HelpDeskTI.Controllers
         {
             var chamado = _chamadoService.DetalhesChamado(id);
             return Ok(chamado);
+        }
+
+        [HttpDelete]
+        [Route("excluirChamado/{id}")]
+        public ActionResult ExcluirChamado([FromRoute] long id)
+        {
+            try
+            {
+                _chamadoService.ExcluirChamado(id);
+                return Ok(new { message = "Chamado excluído com sucesso." });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { message = ex.Message });
+            }
         }
     }
 }
