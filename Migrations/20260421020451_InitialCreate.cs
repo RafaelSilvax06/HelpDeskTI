@@ -54,10 +54,9 @@ namespace HelpDeskTI.Migrations
                     SolicitanteId = table.Column<int>(type: "INTEGER", nullable: true),
                     AnalistaId = table.Column<int>(type: "INTEGER", nullable: true),
                     Categoria = table.Column<int>(type: "INTEGER", nullable: false),
-                    Comentarios = table.Column<string>(type: "TEXT", nullable: false),
                     DataAbertura = table.Column<DateTime>(type: "TEXT", nullable: false),
                     DataAtualizacao = table.Column<DateTime>(type: "TEXT", nullable: false),
-                    DataFechamento = table.Column<DateTime>(type: "TEXT", nullable: false)
+                    DataFechamento = table.Column<DateTime>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

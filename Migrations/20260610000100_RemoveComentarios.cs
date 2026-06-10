@@ -1,15 +1,23 @@
-﻿using System;
+using System;
+using HelpDeskTI.Data;
+using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace HelpDeskTI.Migrations
 {
-    /// <inheritdoc />
-    public partial class AddComentarios : Migration
+    [DbContext(typeof(AppDbContext))]
+    [Migration("20260610000100_RemoveComentarios")]
+    public partial class RemoveComentarios : Migration
     {
-        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "Comentarios");
+        }
+
+        protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
                 name: "Comentarios",
@@ -46,14 +54,6 @@ namespace HelpDeskTI.Migrations
                 name: "IX_Comentarios_ChamadoId",
                 table: "Comentarios",
                 column: "ChamadoId");
-        }
-
-        /// <inheritdoc />
-        protected override void Down(MigrationBuilder migrationBuilder)
-        {
-            migrationBuilder.DropTable(
-                name: "Comentarios");
-
         }
     }
 }

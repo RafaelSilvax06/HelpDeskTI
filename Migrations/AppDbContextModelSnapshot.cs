@@ -50,7 +50,7 @@ namespace HelpDeskTI.Migrations
                     b.Property<DateTime>("DataAtualizacao")
                         .HasColumnType("TEXT");
 
-                    b.Property<DateTime>("DataFechamento")
+                    b.Property<DateTime?>("DataFechamento")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")
@@ -77,34 +77,6 @@ namespace HelpDeskTI.Migrations
                     b.HasIndex("SolicitanteId");
 
                     b.ToTable("Chamados");
-                });
-
-            modelBuilder.Entity("HelpDeskTI.Models.Comentario", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<long?>("ChamadoId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("autorId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<DateTime>("data_criacao")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("mensagem")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ChamadoId");
-
-                    b.HasIndex("autorId");
-
-                    b.ToTable("Comentarios");
                 });
 
             modelBuilder.Entity("HelpDeskTI.Models.Usuario", b =>
@@ -152,25 +124,6 @@ namespace HelpDeskTI.Migrations
                     b.Navigation("Solicitante");
                 });
 
-            modelBuilder.Entity("HelpDeskTI.Models.Comentario", b =>
-                {
-                    b.HasOne("HelpDeskTI.Models.Chamado", "Chamado")
-                        .WithMany("Comentarios")
-                        .HasForeignKey("ChamadoId");
-
-                    b.HasOne("HelpDeskTI.Models.Usuario", "autor")
-                        .WithMany()
-                        .HasForeignKey("autorId");
-
-                    b.Navigation("Chamado");
-
-                    b.Navigation("autor");
-                });
-
-            modelBuilder.Entity("HelpDeskTI.Models.Chamado", b =>
-                {
-                    b.Navigation("Comentarios");
-                });
 #pragma warning restore 612, 618
         }
     }

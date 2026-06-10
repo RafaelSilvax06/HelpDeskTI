@@ -54,7 +54,11 @@
                     <div class="chamado-tags">
                         <span class="status">@chamado.Status</span>
                         <span class="prioridade">@chamado.Prioridade</span>
-                        <button class="btn-Detalhes">Detalhes</button>
+                        <button type="button"
+                                class="btn-Detalhes"
+                                onclick="window.location.href='/Dashboard/DetalhesAnalista/@chamado.Id'">
+                            Detalhes
+                        </button>
                     </div>
 
                     <div class="chamado-info">

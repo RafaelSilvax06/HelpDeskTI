@@ -26,7 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="chamado-tags">
                         <span class="status">${chamado.status}</span>
                         <span class="prioridade">${chamado.prioridade}</span>
-                        <button class="btn-Detalhes">Detalhes</button>
+                        <button
+                            type="button"
+                            class="btn-Detalhes"
+                            onclick="window.location.href='/Dashboard/DetalhesAnalista/${chamado.id}'">
+                            Detalhes
+                        </button>
                     </div>
 
                     <div class="chamado-info">
