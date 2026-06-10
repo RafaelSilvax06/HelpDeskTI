@@ -50,25 +50,21 @@ O sistema permite que usuários abram chamados e acompanhem o andamento do atend
 ---
 ## 💻 Telas Do Projeto
 - Tela Login
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/5830d70f-35ae-4170-9db4-ef5f289be398" />
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/1f92b573-bff5-4f3c-9349-ea0172aefee9" />
 - Tela Dashboard Analista
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/2d31353e-4883-4ade-bc26-4a55f45fdfcf" />
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/5025017a-7f09-4449-b30f-4322812475b8" />
 - Tela Dashboard Cliente
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/3eaa6cf8-2ae3-4c85-a8c9-c366a8b4b15a" />
+<img width="1918" height="1197" alt="image" src="https://github.com/user-attachments/assets/5337ce3a-e79b-43e3-b662-cf5d0930b675" />
 - Tela Novo Chamado
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/d3430233-af52-41fe-ab9f-696087d8cdd4" />
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/2cf81a4c-71fa-463b-a77d-2f5d6f37f92d" />
 - Tela Cadastro Cliente / Analista
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/a1245567-5ef8-47a4-8040-deefde8b10e9" />
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/7c97ea6d-d46c-443c-8d78-ee9d14043682" />
 - Tela Detalhes Analista
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/991c609f-b977-4033-baf5-34b237ca8c22" />
+<img width="1914" height="1198" alt="image" src="https://github.com/user-attachments/assets/b9eebaf0-9057-43f1-99a5-2ef80eb0ca28" />
 - Tela Detalhes Usuario
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/0d1a79e2-e60d-4fe5-a046-23467f903927" />
+<img width="1919" height="1196" alt="image" src="https://github.com/user-attachments/assets/7f82800a-f795-4046-b7e5-8a1da8c421e5" />
 - Tela Atualizar Chamado
-<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/d0a0dbee-d68c-4939-8af4-3c744b841393" />
-
-
-
-
+<img width="1919" height="1199" alt="image" src="https://github.com/user-attachments/assets/05a46e9e-9be0-4609-b1d1-e7bbf4439e83" />
 
 # 🚀 Como Executar
 
